@@ -1,0 +1,76 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: crimson;
+}
+
+.small-heading {
+    text-transform: uppercase;
+}
+
+#quote-by-author {
+    display: inline-block;
+    background: lightgrey;
+    padding: 5px;
+    line-height: 1.75;
+}
+
+/* utilizando o combinador descendente */
+article  p {
+    line-height: 2;
+}
+
+/* utilizando o combinador filho */
+.list > li {
+    color: crimson;
+}
+/* retornando o valor dos subitens ao valor inicial */
+.list > li ul {
+    color: initial;
+}
+
+/* utilizando o combinador irmão adjacente */
+header + p{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+header + p::first-letter{
+    font-size: 2rem;
+    color:goldenrod;
+    font-style: oblique;
+}
+
+/* utilizando o combinador adjacente geral */
+header ~ img {
+    border: 4px solid crimson;
+}
+
+/* utilizando pseudo-class para formatar links */
+a:link {
+    color: #1d70b8;
+}
+a:visited {
+    color: #4c2c92;
+}
+a:hover {
+    color: #003078;
+}
+a:focus {
+    outline: solid 1px crimson;
+}
+
+[lang='it']::before{
+    content: '&#x1F603';
+}
+
