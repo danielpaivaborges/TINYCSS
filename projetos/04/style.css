@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=PT+Serif&display=swap');
+
+html {
+    background-color: #f9f7f1;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    color: #404040;
+    padding: 0 24px;
+    text-align: justify;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+time {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    border-top: 3px solid #333333;
+    border-bottom: 3px solid #333333;
+    padding: 12px 0;
+}
+
+blockquote {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    font-family: 'Oswald', sans-serif;
+    margin: 1.5rem 2rem;
+}
+
+blockquote::before {
+    content: open-quote;
+}
+
+blockquote::after {
+    content: close-quote;
+}
+
+@counter-style emoji {
+    /* ESCOLHA O CODIGO UNICODE DA IMAGEM */
+    /* É POSSÍVEL ESCOLHER MAIS DE UMA IMAGEM SEPARANDO ESPAÇO */
+    symbols: "\2614";
+    /* FAÇA QUE SEJA CICLICO PARA ATINGIR TODOS OS ITENS */
+    system: cyclic;
+    /* ESTABELEÇA O QUE VAI APARECER ENTRE A IMAGEM E O TEXTO DO ITEM */
+    suffix: " ";
+}
+
+article ul {
+    list-style: emoji;
+}
+
+img {
+    filter: grayscale(100%);
+}
+
+figure {
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-family: 'Oswald', sans-serif;
+}
+
+@media (min-width: 955px) {
+
+    /* criando as colunas */
+    article {
+        column-count: 3;
+        column-rule: 2px solid #333333;
+        column-gap: 42px;
+        margin-top: 36px;
+    }
+
+    /* fazendo a citação expandir em todas as colunas */
+    blockquote {
+        column-span: all;
+        background-color: #4040401a;
+        padding: 20px;
+        margin: 1rem 0;
+    }
+
+    /* evitando que a figura e a legenda sejam separados */
+    figure {
+        break-inside: avoid;
+        float: left;
+        margin-right: 24px;
+    }
+
+
+}
