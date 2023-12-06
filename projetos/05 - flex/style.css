@@ -1,97 +1,103 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
 
 body {
-  display: grid;
-  place-items: center;
   margin-top: 40px;
   padding: 20px;
-  background: #010101;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 
 main {
-  display: grid;
-  max-width: 1024px;
-  grid-gap: 1rem;
-}
-
-@media (min-width: 700px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  main > section {
-    height: 350px;
-  }
-}
-@media (min-width: 950px) {
-  main {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 h1 {
-  font: 900 120px "Rubik", sans-serif;
+  font-weight: 900;
+  font-size: 120px;
+  font-family: 'Rubik', sans-serif;
   text-transform: uppercase;
-  background: url("bg-img.jpg");
+  background-image: url(bg-img.jpg);
   background-size: cover;
   -webkit-background-clip: text;
   background-clip: text;
-  -moz-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   color: white;
 }
 
-.meeru-island {
-  background-image: url("1.jpg");
+
+
+@media (max-width: 950px) {
+  main {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
 }
+
+.cartao>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: 1rem;
+  padding: 1rem;
+  color: whitesmoke;
+  text-align: center;
+  font: 14px 'Rubik', sans-serif;
+  max-width: 250px;
+}
+
+.cartao>div h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.cartao>div p {
+  font: italic 1.125rem 'Cardo', cursive;
+  line-height: 1.35;
+}
+
+.meeru-island {
+  background-image: url('1.jpg');
+}
+
 .flamingo-beech {
   background-image: url("2.jpg");
 }
+
 .protur-safari {
-  background-image: url("3.jpg");
-}
-.mountain-view {
-  background-image: url("4.jpg");
+  background-image: url('3.jpg');
 }
 
-main > section {
+.mountain-view {
+  background-image: url('4.jpg');
+}
+
+.cartao {
   background-size: cover;
   background-color: #3a8491;
   border-radius: 4px;
 }
 
-main > section > div {
-  background-color: rgba(0, 0, 0, .75);
-  margin: 1rem;
-  padding: 1rem;
-  color: whitesmoke;
-  text-align: center;
-  font: 14px "Rubik", sans-serif;
-  height: calc(100% - 4rem);
-  display: grid;
-  grid-template-rows: min-content auto min-content;
-  align-items: center;
-}
-
-section h2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 0;
-}
-
-section p {
-  font: italic 1.125rem "Cardo", cursive;
-  line-height: 1.35;
-}
-
-
 a {
   background-color: #ffa600;
-  color: rgba(0, 0, 0, .75);
+  color: rgba(0, 0, 0, 0.75);
   padding: 0.75rem 1.5rem;
-  display: inline-block;;
+  display: inline-block;
   border-radius: 4px;
   text-decoration: none;
+  width: 70%;
 }
 
 a:hover {
@@ -103,30 +109,32 @@ a:focus {
   outline-offset: 3px;
 }
 
-@media (hover: hover) and (min-width: 700px) and (prefers-reduced-motion: no-preference) {
-  main > section > div {
-    transform: translateY(calc(350px - 8rem));
-    height: 5rem;
-    overflow: hidden;
+
+
+@media (hover: hover) and (min-width: 700px) {
+  .cartao>div {
+    transform: translateY(10rem);
     transition: all 700ms ease-in-out;
   }
-  
-  div > *:not(h2) {
+
+  .cartao>div *:not(h2) {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(10rem);
     transition: all 700ms ease-in-out;
   }
-  
+
+  section {
+    overflow: hidden;
+  }
+
   section:hover div,
   section:focus-within div {
     transform: translateY(0);
-    height: calc(350px - 4rem);
-  }
-  
-  section:hover div > *:not(h2), 
-  section:focus-within div > *:not(h2){
-    opacity: 1;
-    transform: translateY(0);
   }
 
+  section:hover div>*:not(h2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 900ms ease-in-out;
+  }
 }
